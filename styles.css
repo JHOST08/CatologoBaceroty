@@ -1,0 +1,1823 @@
+/* ======== VARIABLES Y BASE ======== */
+:root {
+  --azul-marino: #0f2537;
+  --dorado-vicuna: #7f5700;
+  --verde-whatsapp: #25d366;
+  --fondo-general: #f8f9ff;
+  --blanco: #ffffff;
+  --texto-oscuro: #0d1c2f;
+  --texto-gris: #43474c;
+  --borde-suave: #e6eeff;
+  --fuente: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente);
+  background-color: var(--fondo-general);
+  color: var(--texto-oscuro);
+  line-height: 1.6;
+}
+
+.contenedor {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ==========================================
+   HEADER Y NAVEGACIÓN
+   ========================================== */
+.encabezado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(248, 249, 255, 0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.barra-superior {
+  background-color: var(--azul-marino);
+  color: var(--blanco);
+  font-size: 12px;
+  padding: 8px 0;
+}
+
+.barra-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contacto-lista {
+  display: flex;
+  gap: 0.90rem;
+  align-items: center;
+  font-weight: 700;
+  letter-spacing: 0.5px
+}
+
+.contacto-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.icono-sm {
+  font-size: 14px;
+}
+
+.separador {
+  opacity: 0.5;
+}
+
+.barra-principal {
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.marca-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 65px;
+}
+
+.logo-titulo {
+  font-size: 37px;
+  font-weight: 900;
+  color: var(--azul-marino);
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-shadow: 0 5px 5px rgb(47 68 105 / 21%);
+}
+
+.logo-sub {
+  color: var(--dorado-vicuna);
+  font-size: 15px;
+  margin-left: 7px;
+}
+
+.user-avatar-btn {
+    background-color: #0f2537;
+    border-radius: 9999px;
+    color:#ffffff;
+}
+
+.acciones-header {
+    display: flex;
+    gap: 8px;
+    align-items: center
+}
+
+.menu-navegacion {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 750;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: var(--texto-gris);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.menu-link:hover, .menu-link.activo {
+  color: var(--azul-marino);
+  background-color: var(--borde-suave);
+}
+
+.pildora {
+  background-color: #ffdeae;
+  color: #281900;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+.desplegable {
+  position: relative;
+}
+
+.desplegable-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--blanco);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  min-width: 220px;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.desplegable:hover .desplegable-menu {
+  display: flex;
+}
+
+.desplegable-menu a {
+  text-decoration: none;
+  color: var(--texto-gris);
+  padding: 8px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+.desplegable-menu a:hover {
+  background-color: var(--borde-suave);
+  color: var(--azul-marino);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: var(--blanco);
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-whatsapp:hover {
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.5);
+  transform: translateY(-1px);
+}
+
+/* ==========================================
+   SECCIONES Y HEROS
+   ========================================== */
+.contenido-principal {
+  padding-top: 110px;
+}
+
+.seccion-hero {
+  padding: 6rem 0;
+  background-image: 
+  linear-gradient(to right, rgb(183 181 181 / 75%) 0%, rgba(255, 255, 255, 0.75) 45%, rgba(255, 255, 255, 0) 70%),
+  url('img/FondoBaceroty.jpg');
+  background-size: cover;
+  background-position: center right;
+  position: relative;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+.etiqueta-destacada {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #0f172a; /* Azul marino profundo */
+  font-size: 11px;
+  font-weight: 750;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-flex;
+  letter-spacing: 0.08rem;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.hero-titulo {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-top: 18px;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.hero-titulo span {
+  color: #c7831d;
+}
+
+.hero-bajada {
+  color: #1e293b; /* Gris pizarra oscuro para máxima lectura */
+  margin-top: 18px;
+  font-size: 17px;
+  font-weight: 500;
+  max-width: 560px;
+  line-height: 1.6;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.metricas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.tarjeta-metrica,
+.tarjeta-metrica1 {
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.tarjeta-metrica {
+  background-color: rgba(255, 255, 255, 0.92);
+  border: 2px solid rgb(163 148 148 / 80%);
+}
+.tarjeta-metrica1 {
+  background-color: rgba(253, 244, 227, 0.91);
+  border: 2.5px solid rgba(119, 73, 5, 0.562);
+}
+
+.tarjeta-metrica1:hover,
+.tarjeta-metrica:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.metrica-numero {
+  font-weight: 800;
+  font-size: 18px;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.metrica-numero.dorado {
+  color: rgba(177, 108, 5, 0.822);
+}
+
+.metrica-texto {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  margin-top: 2px;
+}
+
+.hero-botones {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.punto{
+    background-color: #c7831d;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    box-shadow: 0 0 4px #f59e0b;
+    animation: pulse-rojo 1.5s infinite;
+}
+
+.btn-primario {
+  background-color: #0f172a;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 10px 15px rgba(14, 39, 95, 0.527);
+  transition: all 0.2s ease;
+}
+
+.btn-primario:hover {
+  background-color: #1e293b;
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp-lg {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 10px 15px rgba(37, 211, 102, 0.35);
+  transition: all 0.2s ease;
+}
+
+.btn-whatsapp-lg:hover {
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   PROCESO Y VIDEO
+   ========================================== */
+.seccion-proceso {
+  padding: 60px 0;
+  /* Fondo textil suave integrado con capa protectora translúcida */
+  background: 
+    linear-gradient(180deg, rgba(248, 249, 255, 0.92) 0%, rgba(248, 249, 255, 0.96) 100%),
+    url('img/FondoBaceroty2.jpg') center/cover fixed no-repeat;
+  position: relative;
+}
+
+.seccion-encabezado {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 60px auto;
+}
+
+.seccion-encabezado h2 {
+  font-size: 38px;
+  font-weight: 900;
+  color: #0f172a;
+  margin-top: 8px;
+}
+
+.subtitulo-seccion {
+  color: #c7831d;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.camino-proceso {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.paso-fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.paso-fila.invertido .paso-imagen {
+  order: 2;
+}
+
+.paso-fila.invertido .paso-contenido {
+  order: 1;
+}
+
+.paso-imagen {
+  width: 100%;
+  height: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(15, 37, 55, 0.12);
+  border: 4px solid #ffffff;
+  background-color: #0f2537;
+}
+
+.paso-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.paso-fila:hover .paso-imagen img {
+  transform: scale(1.04);
+}
+
+.paso-contenido {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 32px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(15, 37, 55, 0.08);
+}
+
+.numero-paso-badge {
+  display: inline-block;
+  background-color: #0f2537;
+  color: #fdba45;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.paso-contenido h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.paso-contenido p {
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Lista con viñetas */
+.paso-puntos {
+  list-style: none;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.paso-puntos li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.paso-puntos .material-symbols-outlined {
+  color: #25d366;
+  font-size: 18px;
+}
+
+/* watch */
+.bloque-video {
+  /* Fondo azul noche con textura textil tenue mediante gradiente y patrón */
+  background: 
+    linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.90) 100%),
+    url('img/FondoBaceroty.jpg') center/cover no-repeat;
+  color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 40px 0;
+}
+
+/* Reproductor responsivo proporcional (16:9) */
+.video-reproductor {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+  height: 0;
+  background-color: #000000;
+}
+
+.video-reproductor iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Panel de Información del Video */
+.video-info {
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.4); /* Capa ligera para mejorar legibilidad */
+  backdrop-filter: blur(8px);
+}
+
+/* Indicador de transmisión */
+.badge-directo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(253, 186, 69, 0.15);
+  border: 1px solid rgba(253, 186, 69, 0.3);
+  color: #fdba45;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.08rem;
+  width: fit-content;
+  margin-bottom: 16px;
+}
+
+.punto-rojo {
+  width: 8px;
+  height: 8px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #ef4444;
+  animation: pulse-rojo 1.5s infinite;
+}
+
+@keyframes pulse-rojo {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* Título e Historia */
+.video-titulo {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #ffffff;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.video-descripcion {
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+/* Puntos clave / viñetas */
+.video-caracteristicas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 20px;
+}
+
+.item-caracteristica {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.item-caracteristica .material-symbols-outlined {
+  color: #fdba45;
+  font-size: 18px;
+}
+
+/* ==========================================
+   SECCIÓN COTIZACIÓN Y CONTACTO PREMIUM
+   ========================================== */
+.seccion-cotizar {
+  padding: 80px 0;
+  background: 
+    linear-gradient(281deg, rgb(255 255 255 / 92%) 0%, rgb(249 249 249 / 88%) 100%),
+    url('img/FondoCotizarIndustrial.png') center/cover no-repeat;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.cotizar-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Badges decorativas superiores */
+.badge-cotizar {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.badge-cotizar.dorado {
+  background-color: #cdddffc7;
+    color: #173f6b;
+}
+
+.badge-cotizar.azul {
+  background-color: #feefd8;
+  color: #a16207;
+}
+
+/* Títulos y Bajadas */
+.cotizar-titulo, .tienda-titulo {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f2537;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.cotizar-bajada, .tienda-bajada {
+  font-size: 13.5px;
+  color: #64748b;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+/* Caja Blanca del Formulario */
+.cotizar-form-box {
+  background-color: #ffffff;
+  padding: 36px 32px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(15, 37, 55, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Layout de 2 columnas para campos de texto */
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.campo-grupo label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.campo-grupo input, 
+.campo-grupo select,
+.campo-grupo textarea {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  font-family: var(--fuente);
+  font-size: 13.5px;
+  color: #0f2537;
+  transition: all 0.2s ease;
+}
+
+.campo-grupo input:focus, 
+.campo-grupo select:focus,
+.campo-grupo textarea:focus {
+  outline: none;
+  border-color: #0f2537;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(15, 37, 55, 0.1);
+}
+
+/* Botón de envío */
+.btn-enviar-cotizacion {
+  width: 100%;
+  background: linear-gradient(135deg, #0e273b 0%, #10245d 100%);
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(15, 37, 55, 0.2);
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+.btn-enviar-cotizacion:hover {
+  background: linear-gradient(135deg, #1c3951 0%, #203a83 100%);
+  background-color: rgb(24 59 87);
+  transform: translateY(-1.5px);
+}
+
+.nota-redireccion {
+  font-size: 13px;
+  text-align: center;
+  color: #7f5700;
+  margin-top: 12px;
+  font-weight: 600;
+  display: none;
+}
+.nota-redireccion.visible {
+  display: block;
+}
+
+/* Columna Derecha: Tienda e Información */
+.contacto-columna-derecha {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contacto-info-box {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(15, 37, 55, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Lista con iconos oscuros */
+.lista-contacto-tarjetas {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.item-contacto-tarjeta {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.icono-box-negro {
+  background-color: #0f2537;
+  color: #ffffff;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icono-box-negro span {
+  font-size: 20px;
+}
+
+.item-contacto-tarjeta strong {
+  display: block;
+  font-size: 13px;
+  color: #0f2537;
+  margin-bottom: 2px;
+}
+
+.item-contacto-tarjeta p {
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* Botón Google Maps */
+.btn-google-maps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 13.5px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  transition: all 0.2s ease;
+}
+
+.btn-google-maps:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
+
+/* Mapa Redondeado */
+.mapa-contenedor {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  border: 1px solid rgb(0 0 0 / 14%);
+}
+
+/* ==========================================
+   FOOTER Y BOTÓN WHATSAPP FLOTANTE
+========================================== */
+.pie-pagina {
+  background: 
+    linear-gradient(180deg, rgba(15, 37, 55, 0.96) 0%, rgba(10, 25, 38, 0.99) 100%),
+    url('img/FondoBaceroty.jpg') center/cover no-repeat;   /* Fondo azul marino con textura textil tenue y degradado profundo */
+  color: #e2e8f0;
+  padding: 65px 0 30px 0;
+  position: relative;
+  border-top: 3px solid transparent;
+  /* Borde superior dorado vicuña elegante */
+  border-image: linear-gradient(to right, transparent, #c7831d, transparent) 1;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
+}
+.footer-container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr 0.8fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+  align-items: start;
+}
+/* Columna Marca */
+.footer-col-marca {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.footer-logo-img {
+  height: 48px;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+.footer-logo-texto {
+  font-size: 26px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+.footer-logo-sub {
+  color: #c7831d;
+  font-size: 12px;
+  margin-left: 5px;
+}
+.footer-descripcion {
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #94a3b8;
+}
+.footer-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.badge-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+.badge-primary {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #0f2537;
+}
+.badge-secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.footer-col-title { /* Títulos de las Columnas */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+}
+.footer-col-title::after { /* Pequeño subrayado dorado decorativo en cada título */
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background-color: #c7831d;
+  border-radius: 2px;
+}
+.footer-links { /* Listas de Enlaces */
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+}
+.footer-link-simple {
+  text-decoration: none;
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.footer-link-simple:hover {
+  color: #c7831d;
+  transform: translateX(4px);
+}
+.footer-social-link { /* Estilo para los enlaces con imágenes de redes sociales */
+  text-decoration: none;
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.25s ease;
+}
+.social-icon-img { /********** Tamaño y comportamiento de las imágenes de iconos **********/
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  filter: brightness(0.9);
+}
+.footer-social-link:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+.footer-social-link:hover .social-icon-img {
+  transform: scale(1.15);
+  filter: brightness(1.1);
+}
+.footer-links-contacto { /*********** Contacto Comercial ***********/
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0;
+  font-size: 13.5px;
+}
+.footer-atencion {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  line-height: 1.4;
+  color: #cbd5e1;
+}
+.footer-atencion span:first-child {
+  color: #c7831d;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.footer-final { /*********** Créditos Inferiores ***********/
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 25px;
+  font-size: 13px;
+  text-align: center;
+  color: #64748b;
+}
+
+/* ===================  Boton WhastApp Flotante  =================== */
+.btn-flotante-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: var(--blanco);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  text-decoration: none;
+  z-index: 999;
+}
+.btn-flotante-whatsapp:hover {
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.5);
+  transform: translateY(-1px);
+}
+.floatbotom{
+  position: fixed;
+  bottom: 34px;
+  right: 86px;
+  background-color: #0f2537e8;
+  color: var(--blanco);
+  padding: 8px 15px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgb(0 0 0 / 60%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* ===================  Adaptación para pantallas de celulares y tablets  =================== */
+@media (max-width: 992px) {
+  .barra-superior { /* Oculta la barra informativa */
+    display: none; 
+  }
+  .barra-principal {
+    height: auto;
+    padding: 12px 0;
+  }
+  .nav-flex {
+    display: grid !important;
+    grid-template-columns: 1fr auto; /* Columna izquierda para logo, derecha para botones */
+    row-gap: 12px; /* Espacio vertical entre la fila de arriba y la de abajo */
+    column-gap: 8px; /* Espacio horizontal por si acaso */
+    width: 100%;
+    align-items: center;
+  }
+  .logo-img {
+    height: 45px;/* Reducido de 65px*/
+  }
+  .logo-titulo {
+    font-size: 24px; /* Reducido de 37px*/
+  }
+  .logo-sub {
+    font-size: 11px;
+    margin-left: 4px;
+  }
+  .marca-logo {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+  }
+  .acciones-header {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+  }
+  .menu-navegacion {
+    grid-column: 1 / span 2; /* Se estira de extremo a extremo */
+    grid-row: 2;
+    display: flex !important;
+    justify-content: space-between; /* Distribuye Empresa, Productos, Contacto */
+    width: 100%;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .menu-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body {
+    padding-top: 20px !important; 
+  }
+  .cotizar-text { /* Oculta texto "cotizar wsp" */
+    display: none; 
+  }
+/* //////// Fin Ajuste Header //////// */
+  .seccion-hero { /* Ajustes Seccion - HERO*/
+    padding: 3rem 0.5rem;
+    background-position: center;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr ;
+    gap: 20px;
+  }
+  .punto{
+    width: 18px;
+  }
+  .hero-titulo {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  .hero-bajada {
+    font-size: 15px;
+  }
+  .metricas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin: 14px 0;
+    width: fit-content;
+  }
+  .metricas-grid .tarjeta-metrica:nth-child(3) .metrica-numero{
+    font-size: 16px; /* Ajuste de tamaño de fuente para la tercera métrica */
+  }
+  .tarjeta-metrica, .tarjeta-metrica1 {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 8px;
+  }
+  .metrica-numero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+  }
+  .hero-botones {
+    flex-direction: column;
+    gap: 16px;           /* Disminuye la separación entre los dos botones */
+    margin-top: 10px;
+    width: fit-content; 
+  }
+
+  .btn-primario,
+  .btn-whatsapp-lg {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+/* //////// AJUSTES DE VIDEO VISTA CELULAR //////// */
+  .bloque-video {
+    grid-template-columns: 1fr; /* Colapsa a 1 columna en pantallas pequeñas */
+  }
+  .video-info {
+    padding: 28px 20px;
+  }
+  .video-titulo {
+    font-size: 22px;
+  }
+  .floatbotom { /* Oculta el texto flotante wsp*/
+    display: none; 
+} 
+
+/* //////// SECCION ENVÍO DE FORMULARIO DE COTIZACIÓN POR WHATSAPP //////// */
+.cotizar-grid {
+  grid-template-columns: 1fr;
+}
+.form-row-2col {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+.cotizar-form-box, .contacto-info-box {
+  padding: 24px 20px;
+}
+
+/* //////// SECCION FOOTER //////// */
+.footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+
+@media (max-width: 850px) {
+  .paso-fila, .paso-fila.invertido {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .paso-fila .paso-contenido,
+  .paso-fila.invertido .paso-contenido {
+    order: 1;
+  }
+  .paso-fila .paso-imagen,
+  .paso-fila.invertido .paso-imagen {
+    order: 2;
+  }
+  .paso-imagen {
+    height: 210px;
+  }
+  .seccion-proceso {
+    padding: 50px 0;
+  }
+  /* Ajustar catálogo a 1 o 2 columnas */
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
+  .cotizar-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/* ==========================================
+   VISTA CATALOGO DE PRODUCTOS
+   ========================================== */
+.seccion-catalogo {
+  background: linear-gradient(180deg, rgba(248, 249, 255, 0.92) 0%, rgba(248, 249, 255, 0.96) 100%), 
+  url(img/FondoBaceroty2.jpg) center / cover fixed no-repeat;
+  position: relative;
+}
+.seccion-catalogo {
+  padding: 60px 0 90px 0;
+  background-color: #f8fafc;
+}
+
+.filtros-contenedor { /* contenedor de filtros CATALOGO*/
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  padding-bottom: 5px;
+
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+.btn-filtro {
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #475569;
+  padding: 9px 22px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: var(--fuente);
+}
+
+.btn-filtro:hover, 
+.btn-filtro.activo {
+  background-color: var(--azul-marino, #0f2537);
+  color: #ffffff;
+  border-color: var(--azul-marino, #0f2537);
+  box-shadow: 0 4px 12px rgba(15, 37, 55, 0.15);
+}
+
+/* Grilla de Productos */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.tarjeta-producto {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-producto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+}
+
+.producto-img {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+}
+
+.producto-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.tarjeta-producto:hover .producto-img img {
+  transform: scale(1.05);
+}
+
+.badge-card {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--azul-marino, #0f2537);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.producto-cuerpo {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.producto-titulo {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f2537;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.producto-desc {
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+/* Paleta de Colores en Miniatura */
+.paleta-mini {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 18px;
+  padding-top: 8px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.dot-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.mas-colores {
+  font-size: 11px;
+  font-weight: 700;
+  color: #b45309;
+  margin-left: 4px;
+}
+
+/* Botón Ver Tela estilo Trozos & Telas */
+.btn-ver-tela {
+  background-color: #d97706; /* Dorado Vicuña brillante */
+  color: #ffffff;
+  text-decoration: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 13.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+}
+.btn-ver-tela:hover {
+  background-color: #b45309;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(217, 119, 6, 0.35);
+}
+
+
+/* ==========================================
+   VISTA DETALLE DE CADA PRODUCTO EN GENERAL
+   ========================================== */
+.seccion-detalle-producto {
+  padding: 40px 0 80px 0;
+  background: linear-gradient(180deg, rgba(248, 249, 255, 0.92) 0%, rgba(248, 249, 255, 0.96) 100%), 
+  url(img/FondoBaceroty2.jpg) center / cover fixed no-repeat;
+  position: relative;
+}
+.indice-navegacion a {
+  color: #0f2537;
+  text-decoration: none;
+  font-weight: 700;
+}
+.indice-navegacion {
+  font-size: 13px;
+  color: #56688d;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+.detalle-producto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 70px;
+  position: relative;
+}
+
+/*Etiquetas de Producto*/
+.etiquetas-producto{
+  display: flex;
+  align-items: center; /* Alinea ambas etiquetas al centro verticalmente */
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.badge-etiqueta-producto{
+  background-color: #cdddffc7;
+  color: #173f6b;
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+.badge-etiqueta-punto{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgb(220, 252, 231);
+  border: 1px solid rgba(59, 143, 89, 0.726);
+  color: rgb(21, 128, 61);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.08rem;
+  width: fit-content;
+  white-space: nowrap;
+}
+.punto-verde{
+  width: 8px;
+  height: 8px;
+  background-color: #1aa10f;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #1aa10f;
+  animation: pulse-rojo 1.5s infinite;
+}
+
+
+/* Imagenes Producto Box*/
+.foto-principal-box { 
+  width: 100%;
+  height: 450px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 17%);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 16px;
+}
+.foto-principal-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.foto-principal-box img:hover { 
+  transform: scale(1.08);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .22);
+}
+.info-box-fotoprincipal{
+  background: #fdfdfc;
+  border: 1px solid #e7e5e4;
+  border-radius: 10px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content; /*Ajusta el Ancho*/
+}
+.box-imagen-secundaria{
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 17%);
+  border: 1px solid #e2e8f0;
+}
+.box-imagen-secundaria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.nombre-img-secundaria{
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+
+/* Información */
+.titulo-detalle {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f2537;
+  margin-top: 6px;
+}
+.subtitulo-detalle {
+  font-size: 15px;
+  color: #64748b;
+  margin-bottom: 24px;
+}
+.caja-precios {
+  background-color: #f8fafc;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 24px;
+}
+.precio-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  gap: 15px;
+}
+.precio-item.destacado {
+  border-top: 1px solid #cbd5e1;
+  margin-top: 8px;
+  padding-top: 12px;
+}
+.monto-precio {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f2537;
+}
+.monto-precio small {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* ficha especificaciones de tejido*/
+.ficha-rapida {
+  margin-bottom: 24px;
+}
+.ficha-rapida h4, .bloque-colores-detalle h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f2537;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ficha-rapida ul {
+  list-style: none;
+  font-size: 14px;
+  color: #334155;
+}
+.ficha-rapida li {
+  padding: 6px 0;
+  border-bottom: 1px solid #f1f5f900;
+}
+
+
+/* Chips de Colores */
+.pestanas-stock {
+  display: flex;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 16px;
+}
+
+.tab-stock {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-stock.activo {
+  background-color: #172554; /* Tono oscuro tipo referencia */
+  color: #ffffff;
+}
+
+.conteo-colores {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f2537;
+  margin-bottom: 12px;
+}
+
+.grid-colores-detalle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Botón con foto de textura (Estilo Campoytex) */
+.chip-color-foto {
+  width: 47px; 
+  height: 43px; 
+  padding: 2px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px; /* Esquinas redondeadas */
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chip-color-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+/* Efecto al pasar el cursor */
+.chip-color-foto:hover {
+  border-color: #0f2537;
+  transform: translateY(-4px);
+}
+
+/* Estado ACTIVO (El marco seleccionado tipo la 2da foto) */
+.chip-color-foto.activo {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #0f2537; /* Doble borde de selección */
+}
+
+/* Ocultar elementos según pestaña seleccionada */
+.chip-color-foto.oculto {
+  display: none !important;
+}
+
+/* Indicador naranja para Bajo Pedido */
+.punto-naranja {
+  width: 8px;
+  height: 8px;
+  background-color: #f59e0b;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #f59e0b;
+  animation: pulse-rojo 1.5s infinite;
+}
+
+
+/* Sección Cómo Pedir */
+.seccion-como-pedir{
+  background: #fdfdfc;
+  border: 1px solid #e7e5e4;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+}
+.pedir-titulo {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.pedir-subtitulo{
+  text-align: center;
+  font-size: 14px;
+  color: #43474c;
+  margin-bottom: 25px;
+}
+.pedido-info{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+  gap: 30px 0px;
+  position: relative;
+}
+.pedido-pasos{
+  text-align: center;
+  padding: 0 8px;
+  position: relative;
+}
+.pedido_emoji{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, .15);
+  border: 1.5px solid #c9a84c;
+  color: #f0d080;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  position: relative;
+  z-index: 1;
+}
+.pedido-info span{
+  font-size: 24px;
+  color: #0f2537;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -30px;
+}
+.pas{
+  font-size: 13px;
+  font-weight: 600;
+  color: #1C1917;
+  margin-bottom: 4px;
+}
+.subpas{
+  font-size: 12px;
+  line-height: 1.5;
+  color: #616785;
+  font-weight: 500;
+}
+
+/* Recomendaciones Inferiores */
+.seccion-recomendados {
+  border-top: 2px solid #12314bbd;
+  padding-top: 40px;
+}
+.titulo-recomendados {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f2537;
+  margin-bottom: 28px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+
+
+
+@media (max-width: 992px) {
+  /* CATALOGO PRODUCTOS */
+  .productos-grid { grid-template-columns: 1fr; }
+  .filtros-contenedor{
+    justify-content: flex-start;
+  }
+
+  /* SECCION DETALLE PRODUCTO */
+  .detalle-producto-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .galeria-producto {
+    order: 2; /* Pasa a la parte inferior (abajo) */
+  }
+  .info-producto {
+    order: 1; /* Pasa a la parte superior (arriba) */
+  }
+
+  /* Sección Cómo Pedir */
+  .pedido-info{
+    grid-template-columns: 1fr;
+  }
+  .pedido-info span{
+    display: none;
+  }
+   
+}

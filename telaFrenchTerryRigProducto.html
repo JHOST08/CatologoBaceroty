@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jersey Algodón Peinado 20/1 | Textil BACEROTY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<!-- HEADER DINÁMICO -->
+<div id="header-dinamico"></div>
+
+<main class="contenido-principal">
+<section class="seccion-detalle-producto">
+
+<div class="contenedor">   
+    <!-- Indice de Navegación -->
+    <nav class="indice-navegacion">
+        <a href="index.html">Inicio</a> / 
+        <a href="catalogo.html">Catálogo de Telas</a> / 
+        <span>Jersey Algodón Peinado 20/1</span>
+    </nav>
+
+    <div class="detalle-producto-grid">
+        
+        <!-- Galería de Fotos (Lado Izquierdo) -->
+        <div class="galeria-producto">
+        <div class="foto-principal-box">
+            <img id="imagenPrincipal" src="img/jersery20-1.png" alt="Jersey 20/1 Peinado"/>
+        </div>
+        <div class="info-box-fotoprincipal">
+            <div class="box-imagen-secundaria">
+                <img id="imagenPrincipal" src="img/jersery20-1.png" alt="Jersey 20/1 Peinado"/>
+            </div>
+            <div>
+                <div class="nombre-img-secundaria">Beige / Crema</div>
+                <div class="badge-etiqueta-punto"><span class="punto-verde"></span><span>En Stock</span></div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Información y Etiquetas (Lado Derecho) -->
+        <div class="info-producto">
+            <div class="etiquetas-producto">
+                <span class="badge-etiqueta-producto">TEÑIDO REACTIVO / ALGODÓN PEINADO</span>
+                <div class="badge-etiqueta-punto"><span class="punto-verde"></span><span>En Stock</span></div>
+            </div>
+        <h1 class="titulo-detalle">Jersey Algodón Peinado 20/1</h1>
+        <p class="subtitulo-detalle">Tejido de punto de algodón de alta densidad y tacto suave.</p>
+
+        <div class="caja-precios">
+            <div class="precio-item">
+            <span class="label-precio">Venta por Kilo (A partir de 1 kg):</span>
+            <span class="monto-precio">S/ 38.00 <small>/ Kilo</small></span>
+            </div>
+            <div class="precio-item destacado">
+            <span class="label-precio">Venta por Rollo (Aprox. 20 - 22 kg):</span>
+            <span class="monto-precio">S/ 35.50 <small>/ Kilo por Rollo Cerrado</small></span>
+            </div>
+        </div>
+
+        <!-- Ficha Técnica Rápida -->
+        <div class="ficha-rapida">
+            <h4><span class="material-symbols-outlined">assignment</span> Especificaciones del Tejido</h4>
+            <ul>
+            <li><strong>Composición:</strong> 100% Algodón Peinado</li>
+            <li><strong>Gramaje:</strong> 200 - 210 g/m²</li>
+            <li><strong>Rendimiento:</strong> 2.30 a 2.40 mt/kg</li>
+            <li><strong>Ancho:</strong> 0.90 m tubular / 1.80 m abierto</li>
+            <li><strong>Teñido:</strong> Reactivo (No destiñe ni encoge más del 3%)</li>
+            </ul>
+        </div>
+
+        <!-- Selector de Tipo de Stock y Colores -->
+        <div class="bloque-colores-detalle">
+            <!-- Pestañas En Stock / Bajo Pedido -->
+            <div class="pestanas-stock">
+                <button type="button" class="tab-stock activo" onclick="cambiarDisponibilidad('stock', this)">En stock</button>
+                <button type="button" class="tab-stock" onclick="cambiarDisponibilidad('pedido', this)">Bajo pedido</button>
+            </div>
+
+            <!-- Indicador de cantidad de colores -->
+            <p class="conteo-colores" id="conteoColores">4 colores disponibles</p>
+
+            <!-- Lista de Colores -->
+            <div class="grid-colores-detalle" id="gridColores">
+                <!-- Colores En Stock -->
+                <button type="button" class="chip-color-foto activo" data-tipo="stock" data-nombre="Blanco Puro" data-img="img/blanco-jer20-1.jpg" onclick="seleccionarColor(this)" title="Blanco Puro">
+                    <img src="img/blanco-jer20-1.jpg" alt="Blanco Puro" />
+                </button>
+
+                <button type="button" class="chip-color-foto" data-tipo="stock" data-nombre="Negro Intenso" data-img="img/negro-jer20-1.png" onclick="seleccionarColor(this)" title="Negro Intenso">
+                    <img src="img/negro-jer20-1.png" alt="Negro Intenso" />
+                </button>
+
+                <button type="button" class="chip-color-foto" data-tipo="stock" data-nombre="Verde Militar" data-img="img/verdemilitar-jer20-1.png" onclick="seleccionarColor(this)" title="Verde Militar">
+                    <img src="img/verdemilitar-jer20-1.png" alt="Verde Militar" />
+                </button>
+
+                <button type="button" class="chip-color-foto" data-tipo="stock" data-nombre="Beige / Crema" data-img="img/jersery20-1.png" onclick="seleccionarColor(this)" title="Beige / Crema">
+                    <img src="img/jersery20-1.png" alt="Beige / Crema" />
+                </button>
+
+                <!-- Colores Bajo Pedido -->
+                <button type="button" class="chip-color-foto oculto" data-tipo="pedido" data-nombre="Azul Steel" data-img="img/azulsteel-jer20-1.png" onclick="seleccionarColor(this)" title="Azul Steel">
+                    <img src="img/azulsteel-jer20-1.png" alt="Azul Steel" />
+                </button>
+
+                <button type="button" class="chip-color-foto oculto" data-tipo="pedido" data-nombre="Terracota" data-img="img/verdeperico-jer20-1.png" onclick="seleccionarColor(this)" title="Terracota">
+                    <img src="img/verdeperico-jer20-1.png" alt="Terracota" />
+                </button>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+    <div class="seccion-como-pedir">
+    <h2 class="pedir-titulo">¿Cómo pedir?</h2>
+    <p class="pedir-subtitulo">Simple, rápido y sin salir de tu taller</p>
+        <div class="pedido-info">
+            <div class="pedido-pasos">
+                <div class="pedido_emoji">🎨</div>
+                <div class="pas">1. Elige tus colores</div><div class="subpas">Selecciona y agrega al carrito</div> 
+            </div>
+            <span class="material-symbols-outlined">arrow_forward</span>
+            <div class="pedido-pasos">
+                <div class="pedido_emoji">💬</div>
+                <div class="pas">2. Mándanos por WhatsApp</div><div class="subpas">Envía tu carrito o solicita tu cotizacion</div>
+            </div>
+            <span class="material-symbols-outlined">arrow_forward</span>
+            <div class="pedido-pasos">
+                <div class="pedido_emoji">📋</div>
+                <div class="pas">3. Te enviamos cotización</div><div class="subpas">Con precio final y envío a tu ciudad</div>
+            </div>
+            <span class="material-symbols-outlined">arrow_forward</span>
+            <div class="pedido-pasos">
+                <div class="pedido_emoji">💳</div>
+                <div class="pas">4. Pagas</div><div class="subpas">Transferencia, Yape, Plin o tarjeta</div>
+            </div>
+            <span class="material-symbols-outlined">arrow_forward</span>
+            <div class="pedido-pasos">
+                <div class="pedido_emoji">🚚</div>
+                <div class="pas">5. Recibe tu tela</div><div class="subpas">A cualquier parte del Perú</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 8 TELAS SIMILARES RECOMENDADAS (Basado en Foto 3 y 4) -->
+    <div class="seccion-recomendados">
+        <h3 class="titulo-recomendados">TELAS SIMILARES QUE TE RECOMENDAMOS</h3>
+        
+        <div class="productos-grid">
+        
+        <div class="tarjeta-producto">
+            <div class="producto-img">
+            <img src="img/jersey30-1.png" alt="Jersey 30/1"/>
+            </div>
+            <div class="producto-cuerpo">
+            <h3 class="producto-titulo">Jersey Algodón Peinado 30/1</h3>
+            <p class="producto-desc">Línea liviana y fresca para polos estándar.</p>
+            <a href="jersey-30-1.html" class="btn-ver-tela">Ver Tela</a>
+            </div>
+        </div>
+
+        <div class="tarjeta-producto">
+            <div class="producto-img">
+            <img src="img/frenchterryrigido20-1.png" alt="French Terry Rígido"/>
+            </div>
+            <div class="producto-cuerpo">
+            <h3 class="producto-titulo">French Terry Rígido 100% Algodón</h3>
+            <p class="producto-desc">Para casacas y poleras de media estación.</p>
+            <a href="french-terry-rigido.html" class="btn-ver-tela">Ver Tela</a>
+            </div>
+        </div>
+
+        <div class="tarjeta-producto">
+            <div class="producto-img">
+            <img src="img/franela20-1.jpg" alt="Franela 20/1"/>
+            </div>
+            <div class="producto-cuerpo">
+            <h3 class="producto-titulo">Franela Algodón Peinado 20/1</h3>
+            <p class="producto-desc">Opción abrigadora con interior perchado.</p>
+            <a href="franela-20-1.html" class="btn-ver-tela">Ver Tela</a>
+            </div>
+        </div>
+
+        <div class="tarjeta-producto">
+            <div class="producto-img">
+            <img src="img/rib-2x1.png" alt="Rib 2x1"/>
+            </div>
+            <div class="producto-cuerpo">
+            <h3 class="producto-titulo">Rib 2x1 Algodón</h3>
+            <p class="producto-desc">El complemento ideal para cuellos de Jersey 20/1.</p>
+            <a href="rib-2x1.html" class="btn-ver-tela">Ver Tela</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</section>
+</main>
+
+<script>
+function cambiarDisponibilidad(tipo, btn) {
+    // 1. Cambiar estilo activo de los botones superior
+    document.querySelectorAll('.tab-stock').forEach(b => b.classList.remove('activo'));
+    btn.classList.add('activo');
+
+    // 2. Cambiar la insignia de estado superior
+    const badges = document.querySelectorAll('.badge-etiqueta-punto');
+    
+    badges.forEach(badge => {
+        if (tipo === 'stock') {
+            badge.innerHTML = '<span class="punto-verde"></span><span>En Stock</span>';
+            badge.style.backgroundColor = 'rgb(220, 252, 231)';
+            badge.style.borderColor = 'rgba(59, 143, 89, 0.726)';
+            badge.style.color = 'rgb(21, 128, 61)';
+        } else {
+            badge.innerHTML = '<span class="punto-naranja"></span><span>Bajo Pedido</span>';
+            badge.style.backgroundColor = '#fef3c7';
+            badge.style.borderColor = '#f59e0b';
+            badge.style.color = '#b45309';
+        }
+    });
+
+    // 3. Filtrar los colores a mostrar
+    const chips = document.querySelectorAll('.chip-color-foto');
+    let totalVisibles = 0;
+
+    chips.forEach(chip => {
+        if (chip.dataset.tipo === tipo) {
+            chip.classList.remove('oculto');
+            totalVisibles++;
+        } else {
+            chip.classList.add('oculto');
+            chip.classList.remove('activo');
+        }
+    });
+
+    // 4. Actualizar conteo de colores
+    document.getElementById('conteoColores').innerText = `${totalVisibles} colores disponibles`;
+
+    // 5. Activar el primer color de la lista visible y cambiar su imagen
+    const primerColor = Array.from(chips).find(c => c.dataset.tipo === tipo);
+    if (primerColor) {
+        seleccionarColor(primerColor);
+    }
+}
+// 6. Función para seleccionar un color y cambiar la foto principal
+function seleccionarColor(btn) {
+    // Quita la clase activa de los demás botones
+    document.querySelectorAll('.chip-color-foto').forEach(c => c.classList.remove('activo'));
+    btn.classList.add('activo');
+
+    const rutaImagen = btn.dataset.img;
+    const nombreColor = btn.dataset.nombre;
+
+    // Cambia la imagen principal y la secundaria
+    if (rutaImagen) {
+        const imgPrincipal = document.getElementById('imagenPrincipal');
+        if (imgPrincipal) imgPrincipal.src = rutaImagen;
+
+        const imgSecundaria = document.querySelector('.box-imagen-secundaria img');
+        if (imgSecundaria) imgSecundaria.src = rutaImagen;
+    }
+
+    // Cambia el texto del nombre del color
+    const elementoNombre = document.querySelector('.nombre-img-secundaria');
+    if (elementoNombre && nombreColor) {
+        elementoNombre.innerText = nombreColor;
+    }
+}
+
+// Cargar Header Dinámico
+fetch('nav.html')
+    .then(response => response.text())
+    .then(data => {
+    document.getElementById('header-dinamico').innerHTML = data;
+    })
+    .catch(error => console.error('Error cargando el header:', error));
+
+    
+</script>
+</body>
+</html>
